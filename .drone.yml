@@ -12,7 +12,7 @@ steps:
     password:
       from_secret: docker_password
     repo: nold360/octoprint
-    dockerfile: Containerfie
+    dockerfile: Containerfile
     build_args:
       - OCTOPRINT_VERSION=1.8.1
     tags:
