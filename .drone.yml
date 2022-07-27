@@ -1,0 +1,20 @@
+---
+kind: pipeline
+name: build
+type: kubernetes
+
+steps:
+- name: build
+  image: plugins/kaniko
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: nold360/octoprint
+    dockerfile: Containerfie
+    build_args:
+      - OCTOPRINT_VERSION=1.8.1
+    tags:
+      - latest
+      - 1.8.1
